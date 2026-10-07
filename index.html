@@ -197,7 +197,8 @@ function designForm(id) {
       <div><label class="text-sm font-medium">Süre (saat)</label><input name="hours" type="number" step="0.1" min="0" class="inp" value="${d.hours ?? ''}"></div>
       <div><label class="text-sm font-medium">Gram</label><input name="grams" type="number" step="0.1" min="0" class="inp" value="${d.grams ?? ''}"></div>
     </div>
-    <div class="flex justify-end gap-2 pt-2"><button type="button" class="btn btn-s" onclick="closeModal()">Vazgeç</button><button class="btn btn-p">Kaydet</button></div>
+    <div class="flex justify-between pt-2"><div>${id ? `<button type="button" class="btn btn-d" onclick="delItem('designs','${id}')">Sil</button>` : ''}</div>
+    <div class="flex gap-2"><button type="button" class="btn btn-s" onclick="closeModal()">Vazgeç</button><button class="btn btn-p">Kaydet</button></div></div>
   </form>`);
   drawImgs();
 }
@@ -344,7 +345,8 @@ function postForm(id) {
     <div><label class="text-sm font-medium">YouTube bağlantısı</label><input name="youtube" class="inp" placeholder="https://youtu.be/..." value="${esc(p.youtube)}"></div>
     <div><label class="text-sm font-medium">Yazı</label><textarea name="text" rows="6" class="inp">${esc(p.text)}</textarea></div>
     ${imgEditor('Görseller (ana resim = kapak)')}
-    <div class="flex justify-end gap-2 pt-2"><button type="button" class="btn btn-s" onclick="closeModal()">Vazgeç</button><button class="btn btn-p">Kaydet</button></div>
+    <div class="flex justify-between pt-2"><div>${id ? `<button type="button" class="btn btn-d" onclick="delItem('posts','${id}')">Sil</button>` : ''}</div>
+    <div class="flex gap-2"><button type="button" class="btn btn-s" onclick="closeModal()">Vazgeç</button><button class="btn btn-p">Kaydet</button></div></div>
   </form>`, true);
   drawImgs();
 }
