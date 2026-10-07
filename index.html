@@ -140,7 +140,8 @@ function designCard(d) {
     ${d.forSale ? `<span class="absolute top-2 right-2 bg-emerald-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Satılık</span>` : ''}</div>
     <div class="p-4"><h3 class="font-semibold">${esc(d.name)}</h3>
     <p class="text-sm text-slate-500 line-clamp-2 mt-1">${esc(d.desc)}</p>
-    <div class="flex flex-wrap gap-1 mt-3">${(d.tags || []).map(t => `<span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-500">${esc(t)}</span>`).join('')}</div></div></article>`;
+    <div class="flex flex-wrap gap-1 mt-3">${(d.tags || []).map(t => `<span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-500">${esc(t)}</span>`).join('')}</div>
+    <button class="btn btn-s text-xs !py-1 mt-3" onclick="event.stopPropagation();designForm('${d.id}')">Düzenle</button></div></article>`;
 }
 function vVitrin() {
   const q = designQ.toLowerCase();
